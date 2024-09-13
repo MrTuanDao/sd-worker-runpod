@@ -37,7 +37,7 @@ def pil_to_base64(image: Image.Image):
 
 def handler(job):
     """ Handler function that will be used to process jobs. """
-    logging.info("Using model:", model_file_name if model_file_name else model_id)
+    logging.info(f"Using model: {model_file_name if model_file_name else model_id}")
     job_input = job['input']
     prompt = job_input.get('prompt')
     if prompt is None: raise Exception('Prompt cannot be None')
