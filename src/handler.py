@@ -16,9 +16,9 @@ device = "cuda"
 
 network_volumn_path = Path('/runpod-volume/')
 model_file_name = os.getenv("MODEL_FILE")
-model_file_path = network_volumn_path / model_file_name
 
 if model_file_name: 
+    model_file_path = network_volumn_path / model_file_name
     pipe = StableDiffusionPipeline.from_single_file(model_file_path, torch_dtype=torch.float16)
 else:
     pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
